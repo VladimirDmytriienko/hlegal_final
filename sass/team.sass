@@ -1,5 +1,38 @@
 @import "null"
-
+header
+    .header_h
+        .header_wrp
+            .header_menue 
+                .right_side
+                    .header_nav
+                        a:nth-child(3)
+                            color: #F0145A
+                        a:nth-child(3):after 
+                            content: ''
+                            position: absolute
+                            width: 100%
+                            transform: scaleX(0)
+                            height: 2px
+                            bottom: 0
+                            left: 0
+                            background-color: #F0145A
+                            transform-origin: bottom right
+                            transition: transform 0.25s ease-out 
+                        a:after 
+                            content: ''
+                            position: absolute
+                            width: 100%
+                            transform: scaleX(0)
+                            height: 2px
+                            bottom: 0
+                            left: 0
+                            background-color: #24A3FF 
+                            transform-origin: bottom right
+                            transition: transform 0.25s ease-out
+                        a:hover:after 
+                            transform: scaleX(1)
+                            transform-origin: bottom left
+                        
 
 main
     h2
@@ -21,7 +54,10 @@ main
             object-fit: cover
             width: 100%
             height: 400px
-        
+        .team-info
+            a:hover
+                path
+                    stroke: #F0145A
         .team-info
             margin-top: 15px
             display: flex

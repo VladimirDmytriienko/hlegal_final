@@ -800,7 +800,7 @@ footer .footer_wrp .footer_roots a {
   }
   main .publication .publication_recommended .publication_card {
     max-height: 514px !important;
-    max-width: 309px;
+    max-width: 46%;
   }
   main .publication .publication_recommended .publication_card .publication_text {
     margin: 30px;
@@ -890,6 +890,7 @@ footer .footer_wrp .footer_roots a {
     width: 100%;
   }
   main .publication .publication_recommended .publication_card {
+    max-width: 100%;
     row-gap: 0;
     max-height: fit-content !important;
     max-height: 514px;
