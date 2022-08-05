@@ -1,0 +1,200 @@
+@import "null"
+
+
+
+.container-s
+    position: relative
+    margin: 0 auto
+    max-width: 1090px
+    padding: 0 5px
+
+.main
+    &_wrp
+        display: flex
+        column-gap: 60px
+        margin: 60px 0 60px 0
+        .photo
+            .photo_img
+                height: 500px
+                width: 400px
+                object-fit: cover
+                border-radius: 12px
+            .contact__spare
+                display: none
+                h3
+                    font-family: 'Montserrat'
+                    font-style: normal
+                    font-weight: 700
+                    font-size: 38px
+                    line-height: 46px
+                    background: linear-gradient(90.13deg, #F0145A 0.84%, #EF8080 99.96%)
+                    -webkit-background-clip: text
+                    -webkit-text-fill-color: transparent
+                    background-clip: text
+                div
+                    display: flex
+                    flex-wrap: nowrap
+                    p
+                        font-family: 'Montserrat'
+                        font-style: normal
+                        font-weight: 400
+                        font-size: 14px
+                        line-height: 22px
+                        color: #B3B3BA
+                    a
+                        font-family: 'Montserrat'
+                        font-style: normal
+                        font-weight: 400
+                        font-size: 16px
+                        line-height: 20px
+                        color: #24A3FF
+        .main_text
+            display: flex
+            flex-direction: column
+            .contacts
+               
+                h3
+                    font-family: 'Montserrat'
+                    font-style: normal
+                    font-weight: 700
+                    font-size: 38px
+                    line-height: 46px
+                    background: linear-gradient(90.13deg, #F0145A 0.84%, #EF8080 99.96%)
+                    -webkit-background-clip: text
+                    -webkit-text-fill-color: transparent
+                    background-clip: text
+
+                div
+                    display: flex
+                    flex-wrap: nowrap
+                    padding: 25px 0 25px 0
+                    p
+                        font-family: 'Montserrat'
+                        font-style: normal
+                        font-weight: 400
+                        font-size: 14px
+                        line-height: 22px
+                        color: #B3B3BA
+                    a
+                        font-family: 'Montserrat'
+                        font-style: normal
+                        font-weight: 400
+                        font-size: 16px
+                        line-height: 20px
+                        color: #24A3FF
+            .info
+                border-top: 4px solid #E6E6F0
+                
+                p
+                    font-family: 'Montserrat'
+                    font-style: normal
+                    font-weight: 400
+                    font-size: 16px
+                    line-height: 26px
+                    color: #000000
+                    padding: 15px 0
+                p:nth-child(1)
+                    padding-top: 30px
+                  
+                h5
+                    padding: 15px 0
+                    font-family: 'Montserrat'
+                    font-style: normal
+                    font-weight: 700
+                    font-size: 14px
+                    line-height: 17px
+                    letter-spacing: 1px
+                    text-transform: uppercase
+                    color: #323264
+                    
+@media (min-width: 1441px) 
+
+    .container-s
+        position: relative
+        margin: 0 auto
+        max-width: 1370px
+        padding: 0      
+
+@media (max-width: 1024px)
+
+    .main_wrp
+        .photo
+            .photo_img
+                height: 375px
+                width: 300px
+
+@media (max-width: 768px)
+    .container-s
+        position: relative
+        margin: 0 auto
+        max-width: 658px
+        padding: 0 5px
+
+    .main_wrp
+        flex-direction: column
+        row-gap: 30px
+        .photo
+            display: flex
+            flex-direction: row
+            flex-wrap: nowrap
+            column-gap: 30px
+            align-items: center
+            
+            .contact__spare
+                display: flex
+                flex-direction: column
+                div
+                    display: flex
+                    flex-direction: column
+                    p
+                        padding: 5px 0
+                    a
+                        padding: 5px 0
+                    
+    .main
+        .main_text
+            .contacts
+                display: none
+
+@media (max-width: 376px)
+
+    .container-s
+        position: relative
+        margin: 0 auto
+        max-width: 325px
+        padding: 0 5px
+            
+    .main_wrp
+        .photo
+            .photo_img
+                height: 375px
+                width: 315px
+
+    .main
+        &_wrp
+            display: flex
+            column-gap: 60px
+            margin: 30px 0 30px 0
+
+    .main_wrp
+        flex-direction: column
+        row-gap: 30px
+        .photo
+            display: flex
+            flex-direction: column
+            flex-wrap: nowrap
+            column-gap: 30px
+            align-items: center
+            
+            .contact__spare
+                display: flex
+                flex-direction: column
+                h3
+                  
+                div
+                    display: flex
+                    flex-direction: column
+                    p
+                        padding: 5px 0
+                    a
+                        padding: 5px 0
