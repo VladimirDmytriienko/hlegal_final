@@ -1,544 +1,287 @@
-* 
-    box-sizing: border-box
-    margin: 0
-    padding: 0
-a
-    text-decoration: none
-a:visited
-    color: inherit
-ul 
-    list-style: none
-.link
-    font-family: 'Montserrat'
-    font-style: normal
-    font-weight: 700
-    font-size: 14px
-    line-height: 17px
-    letter-spacing: 1px
-    text-transform: uppercase
-    color: #24A3FF !important
-.link:hover
-    color: #F0145A !important
-    path
-        stroke:#F0145A !important
-.dot_separator
-    padding: 0 6px 0 6px
-h2
-    font-family: 'Montserrat'
-    font-style: normal
-    font-weight: 700
-    font-size: 38px
-    line-height: 46px
+@import "variables"
+
+.services
+  @include GradientSuperSoft
+  border-radius: 0 0 12px 12px
+  &__container
+  &__container_service-page
+    justify-content: center
+    padding: 120px 0 0 0
+    @media (min-width: 768px)
+      padding: 230px 0 0 0
+    @media (min-width: 1024px)
+      padding: 120px 0 0 0
+  &__banner
+    position: relative
+    background: url("../img/h_letter.png") 50% 0/auto 100vh no-repeat
+    height: 100vh
+    align-items: center
+    justify-content: center
+    padding: 30px
+  &__banner h1
+    text-align: center
+    color: $WhiteColor
+    margin: 30px 0
+  &__banner a
+    position: absolute
+    border: 1px solid rgba(255,255,255,0.5)
+    border-radius: 50%
+    width: 42px
+    height: 42px
+    bottom: 30px
+  &__banner a::before,
+  &__banner a::after
+    content: ''
+    position: absolute
+    width: 13px
+    height: 2px
+    bottom: 45%
+    background-color: $WhiteColor
+  &__banner a::before
+    left: 23%
+    transform: rotate(45deg)
+  &__banner a::after
+    right: 23%
+    transform: rotate(-45deg)
+  &__banner a:hover,
+  &__banner a:focus
+    border: 1px solid rgba(240, 20, 90,0.5)
+  &__banner a:hover:before,
+  &__banner a:hover:after,
+  &__banner a:focus:before,
+  &__banner a:focus:after
+    background-color: $PinkAccentColor
+  &__info
+  &__info-container
+    display: flex
+    flex-flow: column nowrap
+    row-gap: 30px
+    padding: 30px 30px 60px
+    @media (min-width: 768px)
+      row-gap: 60px
+      padding: 60px
+    @media (min-width: 1920px)
+      padding: 60px 160px
+      max-width: 1920px
+      margin: 0 auto
+  //&__info_entry-page
+  //  @media (min-width: 768px)
+  //    padding: 30px 60px 60px
+  //  @media (min-width: 1440px)
+  //    padding: 30px 280px 60px
+  &__tab
+    flex-flow: column
+    row-gap: 30px
+    @media (min-width: 768px)
+      row-gap: 60px
+    @media (min-width: 1024px)
+      flex-flow: row nowrap
+      column-gap: 60px
+    @media (min-width: 1440px)
+      justify-content: center
+      align-items: center
+  &__tab-items
+    flex-flow: row nowrap
+    column-gap: 30px
+    overflow-x: scroll
+    padding: 0 0 30px 0
+    @media (min-width: 768px)
+      padding: 0 0 60px 0
+    @media (min-width: 1024px)
+      flex-flow: row wrap
+      flex: 0 0 49%
+      padding: 0 60px 0 0
+      margin: 0
+      overflow-x: visible
+      overflow-y: scroll
+      align-items: center
+      row-gap: 30px
+    @media (min-width: 1440px)
+      flex: 0 0 35%
+    @media (min-width: 1920px)
+      flex: 0 0 30%
+
+  &__tab-items::-webkit-scrollbar
+    height: 4px
+    background-color: rgba(255, 255, 255, 0.3)
+    @media (min-width: 1024px)
+      height: auto
+      width: 4px
+  &__tab-items a
+    @include tab-items
+    white-space: nowrap
+    @media (min-width: 1024px)
+      text-align: end
+
+  &__tab-item
+    width: 100%
+  &__tab-item_active
     background: linear-gradient(90.13deg, #F0145A 0.84%, #EF8080 99.96%)
+    color: transparent!important
     -webkit-background-clip: text
-    -webkit-text-fill-color: transparent
-    background-clip: tex
-.container 
+  &__tab-body
+    @media (min-width: 1024px)
+      flex: 1 1 auto
+      align-items: center
+      @media (min-width: 1440px)
+        flex: 0 1 44%
+      @media (min-width: 1920px)
+        flex: 0 1 55%
+
+
+  &__tab-block
+    display: none
+  &__tab-block_show
+    display: flex
+    flex-flow: column nowrap
+    row-gap: 30px
+  &__tab-body h2,
+  &__tab-body span
+    color: $WhiteColor
+  &__tab-block span
+    font: 400 1.1875rem/1.875rem 'Montserrat'
+    display: block
+  &__best-at
+    flex-flow: row wrap
+    row-gap: 30px
+    @media (min-width: 768px)
+      row-gap: 60px
+  &__header
+    flex-flow: column nowrap
+    row-gap: 10px
+  &__title
+    @include GradientHeadings
+  &__name
+    color: $BlueRegColor
+    margin: 30px 0 15px
+    &:hover
+      color: $PinkAccentColor
+  &__description
+    color: $WhiteColor
+  &__block-wrapper
+    flex-flow: row wrap
+    row-gap: 30px
+    @media (min-width: 768px)
+      row-gap: 60px
+      justify-content: space-between
+    @media (min-width: 1024px)
+      column-gap: 60px
+  &__block-wrapper-entry
+    @media (min-width: 1440px)
+      flex: 0 1 80%
+    @media (min-width: 1920px)
+      flex: 0 1 70%
+  &__block
+    flex: 0 1 100%
+    @media (min-width: 768px)
+      flex: 0 1 45%
+    @media (min-width: 1024px)
+      flex: 1 1 28%
+  &__block_entry-page
+    display: flex
+    flex-flow: row wrap
+    row-gap: 30px
+    flex: 0 1 100%
+  &__block-header
+    display: flex
     position: relative
-    margin: 0 auto
-    max-width: 1330px
-    padding: 0 5px
-
-.header_lang:hover
-    background: #F0145A
-.fb:hover
-    path
-        fill: #F0145A 
-
-h4:hover
-    color: #F0145A !important
-
-header
-    background-image: linear-gradient(228.57deg, #323264 11.93%, #323264 57.17%, #643E72 87.46%)
+    flex-flow: column nowrap
+    row-gap: 30px
+    justify-content: center
+    text-align: center
+    align-items: center
+    padding: 0 0 34px 0
+    @media (min-width: 768px)
+      padding: 0 0 64px 0
+  &__block-header:after
+    content: ''
+    position: absolute
+    display: block
+    width: 100%
+    height: 4px
+    bottom: 0
+    left: 0
+    background-color: rgba(255, 255, 255, 0.5)
+  &__block-list
+    color: $WhiteColor
+    flex-flow: row wrap
+    row-gap: 30px
+  &__block-list h3
+    flex: 0 0 100%
+  &__block-list ul
+    font: 400 1.125rem/1.625rem 'Montserrat'
+    list-style-type: disc
+    display: flex
+    flex-flow: row wrap
+    row-gap: 15px
+    @media (min-width: 768px)
+      max-height: 500px
+      flex-flow: column wrap
+      column-gap: 60px
+      flex: 0 1 45%
+    @media (min-width: 1024px)
+      max-height: 370px
+    @media (min-width: 1440px)
+      max-height: 360px
+    @media (min-width: 1920px)
+      max-height: 310px
+  &__block-list ul li
+    margin: 0 0 0 20px
+  &__block-list ul li::marker
+    color: $PinkAccentColor
+  &__block-img
+    width: 92px
+    height: 92px
+    background-color: $WhiteColor
+    border-radius: 24px
+    display: flex
+    justify-content: center
+    align-items: center
+  &__description
+    display: flex
+    flex-flow: row wrap
+    row-gap: 20px
+  &__shadow
     position: relative
-    border-radius: 0px 0px 12px 12px
-    padding-bottom: 60px
-    .header_pop
-        position: fixed
-        z-index: 2
-        top: 0
-        bottom: 0
-        left: 0
-        right: 0
-        background: rgba(0, 0, 0, 0.7)
-        transition: opacity 500ms 
-        visibility: hidden
-        opacity: 0
-
-    .header_pop:target
-        visibility: visible
-        opacity: 1
-        padding: 8px
-        
-        .pop_wrp
-            margin: 50% auto
-            padding: 8px
-            background: #fff
-            position: relative
-            transition: all 1.5s ease-in-out
-            background: #FFFFFF
-            border-radius: 12px 12px 12px 12px
-            width: 100%
-            display: flex
-            flex-direction: column
-            row-gap: 15px
-            .close
-                display: flex
-                justify-content: end
-                a
-                    background-color: transparent
-
-            a
-                display: flex
-                flex-direction: column
-                color: #24A3FF 
-                font-family: 'Montserrat'
-                font-style: normal
-                font-weight: 700
-                font-size: 24px
-                line-height: 29px
-                text-align: center   
-                border-radius: 12px
-                background: #F5F5FA
-                padding: 7px   
-    .header_h
-        .header_wrp
-            // background: url(../icons/big\ H.svg) top center/auto no-repeat
-            .header_menue 
-                padding-top: 50px
-                padding-bottom: 5px
-                display: flex
-                justify-content: space-between
-                .right_side
-                    display: flex
-                    flex-direction: column
-                    align-items: flex-end
-                    row-gap: 16px
-                    .header_contacts
-                        display: flex
-                        align-items: center
-                        .header_lang_wrp  
-                            display: flex
-                            flex-direction: row
-                            margin: 0
-                            padding: 0
-                            border: 0
-                            .header_lang
-                                display: flex
-                                justify-content: center
-                                align-items: center
-                                width: 33px
-                                height: 25px
-                                border-radius: 8px
-                                font-family: 'Montserrat'
-                                font-style: normal
-                                font-weight: 700
-                                font-size: 12px
-                                line-height: 15px
-                                letter-spacing: 1px
-                                color: #FFFFFF
-                                transform: perspective(1px) translateZ(0)
-                                box-shadow: 0 0 1px rgb(0 0 0 / 0%)
-                                overflow: hidden
-                                -webkit-transition-duration: 0.3s
-                                transition-duration: 0.3s
-                                -webkit-transition-property: color, background-color
-                                transition-property: color, background-color
-                        
-                        .header_address
-                            font-family: 'Montserrat'
-                            font-style: normal
-                            font-weight: 400
-                            font-size: 16px
-                            line-height: 20px
-                            color: #FFFFFF
-                        .header_numb 
-                            font-family: 'Montserrat'
-                            font-style: normal
-                            font-weight: 700
-                            font-size: 16px
-                            line-height: 20px
-                            color: #FFFFFF
-                    .header_nav 
-                        a 
-                            margin-left: 15px
-                            font-family: 'Montserrat'
-                            font-style: normal
-                            font-weight: 700
-                            font-size: 16px
-                            text-align: right
-                            color: #FFFFFF
-                            display: inline-block
-                            position: relative
-                            padding-bottom: 5px
-                        a:nth-child(2)
-                            color: #F0145A
-                        a:nth-child(2):after 
-                            content: ''
-                            position: absolute
-                            width: 100%
-                            transform: scaleX(0)
-                            height: 2px
-                            bottom: 0
-                            left: 0
-                            background-color: #F0145A
-                            transform-origin: bottom right
-                            transition: transform 0.25s ease-out
-    
-                        a:after 
-                            content: ''
-                            position: absolute
-                            width: 100%
-                            transform: scaleX(0)
-                            height: 2px
-                            bottom: 0
-                            left: 0
-                            background-color: #FFFFFF
-                            transform-origin: bottom right
-                            transition: transform 0.25s ease-out
-                        a:hover:after 
-                            transform: scaleX(1)
-                            transform-origin: bottom left
-                        
-                        
-            .logo_mini
-                display: none
-        .header_services
-            padding-top: 60px
-            a
-                font-family: 'Montserrat'
-                font-style: normal
-                font-weight: 700
-                font-size: 14px
-                line-height: 17px
-                letter-spacing: 1px
-                text-transform: uppercase
-                color: #24A3FF
-            h2
-                padding: 10px 0 56px 0
-
-            .header_items
-                display: flex
-                flex-wrap: wrap
-                justify-content: flex-start
-                row-gap: 65px
-                column-gap: 60px
-                .item
-                    max-width: 400px
-                    
-                    img
-                        padding: 14px
-                        background: #FFFFFF
-                        border-radius: 24px
-                    h4
-                        padding: 26px 0 15px 0
-                        font-family: 'Montserrat'
-                        font-style: normal
-                        font-weight: 700
-                        font-size: 22px
-                        line-height: 27px
-                        color: #24A3FF
-                    p
-                        font-family: 'Montserrat'
-                        font-style: normal
-                        font-weight: 400
-                        font-size: 16px
-                        line-height: 26px
-                        color: #FFFFFF
-header::before
-    z-index: -1
-    content: ""
+  &__shadow:before,
+  &__shadow:after
+    content: ''
     position: absolute
-    left: 20px
-    right: 20px
-    bottom: 1px
-    height: 11px
-    border-radius: 0px 0px 12px 12px
-    box-shadow: 0 10px 0 0  #CACADB
-header:after
-    z-index: -2
-    content: ""
-    position: absolute
-    left: 40px
-    right: 40px
-    bottom: 1px
-    height: 11px
-    border-radius: 0px 0px 12px 12px
-    box-shadow: 0 20px 0 0 #E7E7F2
+    height: 10px
+    border-radius: 0 0 12px 12px
+  &__shadow:before
+    width: 90%
+    background-color: #CACADB
+    top: 0
+    left: 4%
+  &__shadow:after
+    width: 80%
+    background-color: #E7E7F2
+    bottom: -20px
+    left: 9%
 
 
-main
-    .clients
-        padding-top: 60px
-        h3
-            text-align: center
-            font-family: 'Montserrat'
-            font-style: normal
-            font-weight: 700
-            font-size: 14px
-            line-height: 17px
-            letter-spacing: 1px
-            text-transform: uppercase
-            color: #323264
-            padding-bottom: 30px
-        .clients_company 
-            display: flex
-            flex-direction: row
-            flex-wrap: wrap
-            justify-content: flex-start
-            margin: 0 auto
-            .clients_brand
-                min-width: 25%
-                min-height: 120px
-                display: flex
-                justify-content: center
-                align-items: center
-            .hillel
-                background-color: #1C4280
-            .wannabiz
-                background-color: #143646
-            .tapgerine
-                background-color: #F48B30
-            .dlook
-                background-color: #9E4DC3
-            .oranger
-                background-color: #FD9339
-            .adtelligent
-                background-color: #E2E2E4
-            .clicky
-                background-color: #C71C36  
-            .ecolease
-                background-color: #DCF3F9
-            .InfraTek
-                background-color: #EAEAEA 
-            .city_park
-                background-color: #282240
-            .art_print
-                background-color: #1D4568
-            .ultimate
-                background-color: #000000
 
 
-footer
-    .footer_wrp
-        
-        display: flex
-        padding: 30px 0 30px 0
-        .footer_contacts
-            display: flex
-            flex-direction: column
-            row-gap: 20px
-            .footer_address
-                display: flex
-                flex-direction: row
-
-                .footer_place
-                    display: flex
-                    align-items: center
-                    font-family: 'Montserrat'
-                    font-style: normal
-                    font-weight: 400
-                    font-size: 16px
-                    line-height: 20px
-                    color: #323264
-                .footer_map
-                    display: flex
-                    align-items: center
-                    font-family: 'Montserrat'
-                    font-style: normal
-                    font-weight: 700
-                    font-size: 12px
-                    line-height: 15px
-                    letter-spacing: 1px
-                    text-transform: uppercase
-                    color: #24A3FF
-            .footer_connection
-                display: flex
-                flex-direction: row
-                align-items: center
-                .footer_numb
-                    font-family: 'Montserrat'
-                    font-style: normal
-                    font-weight: 700
-                    font-size: 16px
-                    line-height: 20px
-                    color: #46466E
-                .footer_mail
-                    font-family: 'Montserrat'
-                    font-style: normal
-                    font-weight: 700
-                    font-size: 16px
-                    line-height: 20px
-                    color: #24A3FF
-                .footer_mail:hover
-                    color: #F0145A
-        .footer_roots
-            display: flex
-            margin-left: auto
-            a
-                font-family: 'Montserrat'
-                font-style: normal
-                font-weight: 400
-                font-size: 16px
-                line-height: 20px
-                color: #B3B3BA
-
-@media (min-width: 1441px) 
-
-    .container
-        position: relative
-        margin: 0 auto
-        max-width: 1610px
-        padding: 0 5px
-    header 
-        .header_services
-            .header_items
-                justify-items: flex-start !important
-                column-gap: 60px !important
-                .item
-                    max-width: 493.33px !important    
-
-    main
-        .clients
-            .clients_company
-                max-width: 1720px
-                
-                .clients_brand 
-                    
-                    min-height: 120px !important
-
-@media (max-width: 1024px)
-    .container
-        position: relative
-        margin: 0 auto
-        max-width: 914px
-        padding: 0 5px
-
-    header
-        .header_services 
-            .header_items 
-                .item 
-                    max-width: 261px !important 
-
-    main
-        .clients
-            .clients_company
-                .clients_brand
-                    min-width: 250px
 
 
-@media (max-width: 768px)
-    .container
-        position: relative
-        margin: 0 auto
-        max-width: 658px
-        padding: 0 5px  
-    header 
-        .header_h 
-            .header_wrp 
-                .header_menue
-                    .header_logo
-                        position: absolute
-                        top: 105px
-                    .right_side 
-                        row-gap: 120px    
-                        align-items: flex-start  
-                        .header_nav 
-                            a
-                                margin-left: 0
-                                margin-right: 15px
-            .header_services
-                .header_items
-                    justify-content: space-between
-                    column-gap: 0
 
-    main
-        .clients
-            .clients_company
-                .clients_brand
-                    min-width: 33.33%               
-@media (max-width: 376px)
 
-    .container
-        position: relative
-        margin: 0 auto
-        max-width: 325px
 
-    .dot_separator
-        display: none
-    h2
-        font-size: 30px
-        line-height: 37px
 
-    header
-        .header_h::after
-            z-index: 1
-            content: ""
-            position: absolute
-            left: 0
-            right: 0
-            top: 0
-            height: 45px
-            background: rgba(245, 245, 250, 0.2)
-            
-        .header_h
-            .header_wrp
-                .header_menue
-                    padding: 10px 0 10px 0
-                    .header_logo
-                        .header_logo-main
-                            display: none
-                        
-                    .right_side
-                        .header_contacts
-                            .dot_separator
-                                display: none
-                            .header_fb
-                                display: none
-                            .header_address
-                                display: none
-                            .header_numb
-                                position: absolute
-                                right: 0
-                        .header_nav
-                            display: none
-                .logo_mini
-                    display: flex
-                    justify-content: space-between
-                    align-items: center
 
-    header 
-        .header_h 
-            
-            .header_services 
-                .header_items
-                    .item
-                        font-size: 16px
-                        line-height: 26px
-                        max-width: 315px !important
 
-    main
-        .clients
-            .clients_company
-                .clients_brand
-                    width: 100%
 
-    footer
-        .footer_wrp
-            display: flex
-            flex-direction: column
-            align-items: center
-            justify-content: center
-            .footer_contacts
-                .footer_address
-                    flex-direction: column
-                    justify-content: center
-                    align-items: center
-                    row-gap: 10px
-                .footer_connection
-                    flex-direction: column
-                    justify-content: center
-                    align-items: center
-                    row-gap: 10px
-            .footer_roots
-                margin-left: 0
+
+
+
+
+
+
+
+
+
+
+
+
+
