@@ -370,14 +370,24 @@
   border-radius: 0 0 12px 12px;
 }
 .services__shadow:before {
-  width: 90%;
-  background-color: #CACADB;
-  top: 0;
-  left: 4%;
+  z-index: -1;
+  content: "";
+  position: absolute;
+  left: 20px;
+  right: 20px;
+  bottom: 1px;
+  height: 11px;
+  border-radius: 0px 0px 12px 12px;
+  box-shadow: 0 10px 0 0 #CACADB;
 }
 .services__shadow:after {
-  width: 80%;
-  background-color: #E7E7F2;
-  bottom: -20px;
-  left: 9%;
+  z-index: -2;
+  content: "";
+  position: absolute;
+  left: 40px;
+  right: 40px;
+  bottom: 1px;
+  height: 11px;
+  border-radius: 0px 0px 12px 12px;
+  box-shadow: 0 20px 0 0 #E7E7F2;
 }
